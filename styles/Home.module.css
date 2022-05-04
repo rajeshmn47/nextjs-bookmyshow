@@ -111,6 +111,14 @@ position: relative;
 .seeimage{
   display: block;
 }
+.numbers{
+  display: flex;
+  flex-wrap: wrap;
+}
+.number{
+  margin-right: 10vw;
+
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
