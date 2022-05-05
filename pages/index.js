@@ -4,7 +4,7 @@ import Image from 'next/image'
 import {useState,useEffect} from 'react'
 import Link from 'next/link'
 
-export default function Home() {
+export default function Home({movies}) {
   const[imgnumber,setImgnumber]=useState(1)
   const [numbers,setNumbers]=useState(0)
   useEffect(()=>{
@@ -102,29 +102,24 @@ alt='' width='500'/>
 </div>
 </div>
 <div className={styles.movieimagelinks}>
-  <div>
-<Link href='movie/123'>
-<img src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-OTMlICA3MjlrIHZvdGVz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00098647-dvapsdepqj-portrait.jpg' alt='' width='60'/>
-</Link>
-</div>
-<div>
-<Link href='movie/abc'>
-<img src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzIlICAyMzdrIHZvdGVz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00311733-wsbcgbzuzs-portrait.jpg' alt='' width='60'/>
-</Link>
-</div>
-<div>
-<img src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NTklICA2N2sgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00131903-sqhqmdfkqa-portrait.jpg' alt='' width='60'/>
-</div>
-<div>
-<img src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzQlICAyM2sgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00126822-yzernpaltd-portrait.jpg' alt='' width='60'/>
-</div>
-<div>
-<img src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-OTMlICA3MjlrIHZvdGVz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00098647-dvapsdepqj-portrait.jpg' alt='' width='60'/>
-</div>
-<div>
-<img src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-ODIlICAyMmsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00315406-jkcmtwlygm-portrait.jpg' alt='' width='60'/>
-</div>
+  {movies?.map((m,index)=> <div>
+<Link href={`/movie/${m._id}`}>
+  {m.name}
+  </Link>
+  </div>)}
 </div>
     </div>
   )
+}
+
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:3000/api/movies')
+  const json = await res.json()
+  console.log(json)
+  return {
+    props: {
+      movies: json.data,
+    },
+  }
 }
