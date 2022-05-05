@@ -12,10 +12,11 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-     const movie=await Movie.create({
-         name:'KGF2',genre:[Action,Thriller],img_url:'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzIlICAyMzdrIHZvdGVz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00311733-wsbcgbzuzs-portrait.jpg',
+     const movie=Movie({
+         name:'KGF2',genre:['Action','Thriller'],img_url:'https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzIlICAyMzdrIHZvdGVz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00311733-wsbcgbzuzs-portrait.jpg',
          description:'Its continuation of KGF1 after rocky kills garuda in the first movie rocky continues doing great things in KGF 2'
      }) 
+await movie.save()
         res.status(200).json({ success: true, data:movie })
       } catch (error) {
         res.status(400).json({ success: false })
