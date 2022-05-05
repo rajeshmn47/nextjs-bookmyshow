@@ -2,10 +2,14 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import {useState,useEffect} from 'react'
+import Checkbox from '@material-ui/core/Checkbox';
+import axios from 'axios'
+import Singlenumber from './components/singlenumber'
 
-export default function Home() {
+export default function Home({numbers}) {
   const[imgnumber,setImgnumber]=useState(1)
-  const [numbers,setNumbers]=useState(0)
+  const[checked,setChecked]=useState()
+  console.log(numbers)
   useEffect(()=>{
     if(imgnumber>4){
       setImgnumber(1)
@@ -17,26 +21,32 @@ export default function Home() {
 
   useEffect(()=>{
 var num=[]
-for(let i=0;i<1000;i++){
-  num.push(i)
-}
-setNumbers(num)
-
   },[])
+ 
   return (
     <div className={styles.container}>
-      {imgnumber}
-      <div className={styles.numbers}>
-      {numbers&&numbers?.map((n,index)=> <>
-    
-      {((!(n.toString().indexOf(99)>-1))&&(!(n.toString().indexOf(3)>-1))&&(n.toString().length>2)
-      &&(!(n.toString().indexOf(55)>-1))&&((n.toString().indexOf(7)>-1))&&(!(n.toString().indexOf(0)>-1)))&&
-      ((n.toString().indexOf(2)>-1))&&
-      <div className={styles.number}>
-      <h5>{n}</h5></div> }
-        </>)}
+    <div className={styles.numbers}>
+{numbers.map((n,index)=>
+  <div className={styles.number}>
+     {index}) <Singlenumber n={n}/>
+</div>
+)}
       </div>
      </div>
   )
 }
 
+
+export async function getStaticProps() {
+    const res = await fetch('http://localhost:3000/api/passwo')
+    const json = await res.json()
+    console.log(json)
+  var x=json.data
+  var y=x.filter((r)=>r.ticked===false&&!(r.number.toString().includes(0))&&(r.number.toString().includes(9))
+  &&(r.number.toString().includes(4)))
+    return {
+      props: {
+        numbers: y,
+      },
+    }
+  }

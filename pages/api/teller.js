@@ -1,5 +1,5 @@
 import dbConnect from '../../lib/dbConnect'
-import Password from '../../models/password'
+import Movie from '../../models/movie'
 
 export default async function handler(req, res) {
   const { method } = req
