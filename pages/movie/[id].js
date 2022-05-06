@@ -1,14 +1,18 @@
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 const Movie = ({movie}) => {
   const router = useRouter()
-  const { pid } = router.query
+  const { id } = router.query
 
   return (
   <>
- 
+ <img src={movie.image_url} alt='' width='60'/>
+ {movie.image_url}
+     
   <h5>{movie.name}</h5>
   <p>{movie.description}</p>
+
   </>
   )
 }
