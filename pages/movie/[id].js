@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import styles from '../../styles/Home.module.css'
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const Movie = ({movie}) => {
   const router = useRouter()
@@ -7,12 +9,28 @@ const Movie = ({movie}) => {
 
   return (
   <>
- <img src={movie.image_url} alt='' width='60'/>
- {movie.image_url}
-     
-  <h5>{movie.name}</h5>
+  <div className={styles.movie}>
+    <Image src={movie.image_url} width={300} height={400}/>
+    <div className={styles.moviedetails}>
+  <h1>{movie.name}</h1>
+  <div className={styles.favorites}>
+  <FavoriteIcon style={{color:'#F84464'}}/> 93% 758.5k votes</div>
+  <div  className={styles.yourrating}>
+  <div>
+    <h5>Add your rating & review</h5>
+    <h5>Your ratings matter</h5>
+  </div>
+    <button  className={styles.rate}>
+      Rate now
+    </button>
+  
+  </div>
+ <button className={styles.ticketbtn}>Book tickets</button>
+ </div>
+ 
+  </div >
+  <h2>About The Movie</h2>
   <p>{movie.description}</p>
-
   </>
   )
 }

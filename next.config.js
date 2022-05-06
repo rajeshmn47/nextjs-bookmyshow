@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: [''],
+    domains: ['assets-in.bmscdn.com'],
   },
 }
