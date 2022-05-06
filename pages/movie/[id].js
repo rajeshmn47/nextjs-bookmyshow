@@ -6,8 +6,9 @@ const Movie = ({movie}) => {
 
   return (
   <>
-  <p>Post: {pid}</p>
+ 
   <h5>{movie.name}</h5>
+  <p>{movie.description}</p>
   </>
   )
 }

@@ -5,7 +5,7 @@ import {useState,useEffect} from 'react'
 import Link from 'next/link'
 
 export default function Home({movies}) {
-  const[imgnumber,setImgnumber]=useState(1)
+  const[imgnumber,setImgnumber]=useState(4)
   const [numbers,setNumbers]=useState(0)
   useEffect(()=>{
     if(imgnumber>4){
@@ -102,10 +102,12 @@ alt='' width='500'/>
 </div>
 </div>
 <div className={styles.movieimagelinks}>
-  {movies?.map((m,index)=> <div>
+  {movies?.map((m,index)=> <div className={styles.movieimagelink}>
 <Link href={`/movie/${m._id}`}>
-  {m.name}
+<img src={m.image_url} alt='' width='60'/>
   </Link>
+  {m.name}
+
   </div>)}
 </div>
     </div>

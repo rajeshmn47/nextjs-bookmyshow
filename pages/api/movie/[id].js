@@ -12,9 +12,10 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-          const {pid}=req.query
-      await Movie.findById(pid)
-        res.status(200).json({ success: true, data: Movie })
+          const {id}=req.query
+          console.log(req.query)
+      const movie=await Movie.findById(id)
+ res.status(200).json({ success: true, data: movie })
       } catch (error) {
         res.status(400).json({ success: false })
       }
@@ -26,7 +27,7 @@ export default async function handler(req, res) {
           ) /* create a new model in the database */
           password.ticked=true
 await password.save()
-passwords=await Password.find()
+passwords=await Movie.find()
           res.status(201).json({ success: true, data: passwords })
         } catch (error) {
           res.status(400).json({ success: false })
