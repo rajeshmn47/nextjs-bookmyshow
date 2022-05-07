@@ -46,8 +46,8 @@ setSeating(a)
        </div>
        <div className={styles.seatscontainer}>
        <div className={styles.seats}>
-    {seating.map((s)=>
-       <div className={s===false?styles.filled:styles.seat}>
+    {seating.map((s,index)=>
+       <div className={s===false?styles.filled:styles.seat} onClick={()=>handleselect(index)}>
            {s}
        </div>
     )}
