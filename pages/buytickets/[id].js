@@ -15,10 +15,12 @@ import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutline
 import ConfirmationNumberOutlinedIcon from '@material-ui/icons/ConfirmationNumberOutlined';
 import FastfoodOutlinedIcon from '@material-ui/icons/FastfoodOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import Selectseats from '../components/selectnoseats';
 
 const Buytickets = ({movie}) => {
   const router = useRouter()
   const [anchorEl, setAnchorEl] =useState(null);
+  const [seatopen, setSeatopen] =useState(false);
   const { id } = router.query
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -133,16 +135,17 @@ const Buytickets = ({movie}) => {
       
 </h5>
       </div>
+ 
   <div className={styles.theatre}>
 <FavoriteBorderOutlinedIcon style={{color:'#666666',marginRight:'2vw'}}/>
-<div >
+<div style={{width:'27vw'}} >
 <h5>
         PVR:Gold,Forum Mall,Koramangala
     </h5>
-    <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'2vw',justifyContent:'flex-start'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'1vw',marginTop:'1vh',marginBottom:'1vh'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
-<h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
+<h5 style={{color:'#49BA8E',margin:'0vh 0vw'}}>M-Ticket</h5>
 </div>
 <div style={{display:'flex',alignItems:'center'}}>
 <FastfoodOutlinedIcon style={{color:'#FFA426'}}/>
@@ -160,14 +163,14 @@ const Buytickets = ({movie}) => {
   </div>
   <div className={styles.theatre}>
 <FavoriteBorderOutlinedIcon style={{color:'#666666',marginRight:'2vw'}}/>
-<div >
+<div style={{width:'27vw'}} >
 <h5>
         PVR:Gold,Forum Mall,Koramangala
     </h5>
-    <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'2vw',justifyContent:'flex-start'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'1vw',marginTop:'1vh',marginBottom:'1vh'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
-<h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
+<h5 style={{color:'#49BA8E',margin:'0vh 0vw'}}>M-Ticket</h5>
 </div>
 <div style={{display:'flex',alignItems:'center'}}>
 <FastfoodOutlinedIcon style={{color:'#FFA426'}}/>
@@ -185,14 +188,39 @@ const Buytickets = ({movie}) => {
   </div>
   <div className={styles.theatre}>
 <FavoriteBorderOutlinedIcon style={{color:'#666666',marginRight:'2vw'}}/>
-<div >
+<div style={{width:'27vw'}} >
 <h5>
         PVR:Gold,Forum Mall,Koramangala
     </h5>
-    <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'2vw',justifyContent:'flex-start'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'1vw',marginTop:'1vh',marginBottom:'1vh'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
-<h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
+<h5 style={{color:'#49BA8E',margin:'0vh 0vw'}}>M-Ticket</h5>
+</div>
+<div style={{display:'flex',alignItems:'center'}}>
+<FastfoodOutlinedIcon style={{color:'#FFA426'}}/>
+<h5 style={{color:'#FFA426',margin:'0vh 1vw'}}>Food And Beverages</h5>
+</div>
+</div>
+  </div>
+  <button className={styles.showti}>
+      <InfoOutlinedIcon/>
+      INFO</button>
+  <div>
+      <button className={styles.showtime} onClick={()=>setSeatopen(true)}>09:30AM</button>
+      <button className={styles.showtime}>09:30AM</button>
+  </div>
+  </div>
+  <div className={styles.theatre}>
+<FavoriteBorderOutlinedIcon style={{color:'#666666',marginRight:'2vw'}}/>
+<div style={{width:'27vw'}} >
+<h5>
+        PVR:Gold,Forum Mall,Koramangala
+    </h5>
+    <div style={{display:'flex',alignItems:'center',marginRight:'2vw',justifyContent:'flex-start'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'1vw',marginTop:'1vh',marginBottom:'1vh'}}>
+<ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
+<h5 style={{color:'#49BA8E',margin:'0vh 0vw'}}>M-Ticket</h5>
 </div>
 <div style={{display:'flex',alignItems:'center'}}>
 <FastfoodOutlinedIcon style={{color:'#FFA426'}}/>
@@ -210,14 +238,14 @@ const Buytickets = ({movie}) => {
   </div>
   <div className={styles.theatre}>
 <FavoriteBorderOutlinedIcon style={{color:'#666666',marginRight:'2vw'}}/>
-<div >
+<div style={{width:'27vw'}} >
 <h5>
         PVR:Gold,Forum Mall,Koramangala
     </h5>
-    <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'2vw',justifyContent:'flex-start'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'1vw',marginTop:'1vh',marginBottom:'1vh'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
-<h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
+<h5 style={{color:'#49BA8E',margin:'0vh 0vw'}}>M-Ticket</h5>
 </div>
 <div style={{display:'flex',alignItems:'center'}}>
 <FastfoodOutlinedIcon style={{color:'#FFA426'}}/>
@@ -235,14 +263,14 @@ const Buytickets = ({movie}) => {
   </div>
   <div className={styles.theatre}>
 <FavoriteBorderOutlinedIcon style={{color:'#666666',marginRight:'2vw'}}/>
-<div >
+<div style={{width:'27vw'}} >
 <h5>
-        PVR:Gold,Forum Mall,Koramangala
+        PVR:Gold,Forum Mall,Koramangala  
     </h5>
-    <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'2vw',justifyContent:'flex-start'}}>
+    <div style={{display:'flex',alignItems:'center',marginRight:'1vw',marginTop:'1vh',marginBottom:'1vh'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
-<h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
+<h5 style={{color:'#49BA8E',margin:'0vh 0vw'}}>M-Ticket</h5>
 </div>
 <div style={{display:'flex',alignItems:'center'}}>
 <FastfoodOutlinedIcon style={{color:'#FFA426'}}/>
@@ -258,6 +286,7 @@ const Buytickets = ({movie}) => {
       <button className={styles.showtime}>09:30AM</button>
   </div>
   </div>
+ <Selectseats seatopen={seatopen} setSeatopen={setSeatopen} />
   </div>
   </>
   )
