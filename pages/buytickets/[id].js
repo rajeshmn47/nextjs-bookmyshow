@@ -16,11 +16,15 @@ import ConfirmationNumberOutlinedIcon from '@material-ui/icons/ConfirmationNumbe
 import FastfoodOutlinedIcon from '@material-ui/icons/FastfoodOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import Selectseats from '../components/selectnoseats';
+import PhoneIphoneOutlinedIcon from '@material-ui/icons/PhoneIphoneOutlined';
+import Theatre from '../components/theatre'
 
 const Buytickets = ({movie}) => {
   const router = useRouter()
   const [anchorEl, setAnchorEl] =useState(null);
   const [seatopen, setSeatopen] =useState(false);
+  const[state,setState]=useState(true)
+  const[noofseats,setNoofseats]=useState(1)
   const { id } = router.query
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -31,6 +35,7 @@ const Buytickets = ({movie}) => {
   };
   return (
   <>
+  {state?<>
   <div className={styles.buytickets}>
 {movie.name}
   </div>
@@ -157,7 +162,7 @@ const Buytickets = ({movie}) => {
       <InfoOutlinedIcon/>
       INFO</button>
   <div>
-      <button className={styles.showtime}>09:30AM</button>
+      <button className={styles.showtime} onClick={()=>setSeatopen(true)}>09:30AM</button>
       <button className={styles.showtime}>09:30AM</button>
   </div>
   </div>
@@ -194,7 +199,7 @@ const Buytickets = ({movie}) => {
     </h5>
     <div style={{display:'flex',alignItems:'center',marginRight:'2vw',justifyContent:'flex-start'}}>
     <div style={{display:'flex',alignItems:'center',marginRight:'1vw',marginTop:'1vh',marginBottom:'1vh'}}>
-<ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
+<PhoneIphoneOutlinedIcon style={{color:'#49BA8E',marginRight:'1vw'}}/> 
 <h5 style={{color:'#49BA8E',margin:'0vh 0vw'}}>M-Ticket</h5>
 </div>
 <div style={{display:'flex',alignItems:'center'}}>
@@ -286,8 +291,10 @@ const Buytickets = ({movie}) => {
       <button className={styles.showtime}>09:30AM</button>
   </div>
   </div>
- <Selectseats seatopen={seatopen} setSeatopen={setSeatopen} />
+ <Selectseats seatopen={seatopen} setSeatopen={setSeatopen} state={state} setState={setState} 
+ noofseats={noofseats} setNoofseats={setNoofseats}/>
   </div>
+  </>:<><Theatre seats={noofseats}/></>}
   </>
   )
 }

@@ -4,6 +4,7 @@ import styles from '../../styles/Home.module.css'
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Link from 'next/link'
+import PhoneIphoneOutlinedIcon from '@material-ui/icons/PhoneIphoneOutlined';
 
 const Movie = ({movie}) => {
   const router = useRouter()

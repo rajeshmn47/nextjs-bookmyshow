@@ -430,8 +430,48 @@ margin-top: 4vh;
   padding: 2vh 2vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+}
+.theatretopbar{
+  background-color:#1F253A;
+  padding: 1vh 1vw;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+}
+.theatretopbar h2{
+  margin: 0;
+}
+.theatretopbar h5{
+  margin: 0;
+  font-size: 12px;
+  color: #CCCCCC;
+}
+.ticketsbtn{
+  background-color: #1F253A;
+  outline: none;
+  border: none;
+  color: #FFFFFF;
+  padding: 1vh 1vw;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+}
+.seatscontainer{
+  background-color: #F5F5FA;
+  padding: 3vh 3vw;
+}
+.seats{
+  display: flex;
+
+}
+.seat{
+  width: 1.5vw;
+  height: 3vh;
+  border: 1px solid green;
+  border-radius: 3px;
+  color: green;
 }
 @media (max-width: 600px) {
   .grid {
