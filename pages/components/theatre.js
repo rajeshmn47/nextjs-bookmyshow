@@ -4,19 +4,11 @@ import {Pagination} from '@material-ui/lab';
 import {useState} from 'react'
 
 export const Theatre=({seats})=>{
-const[seating,setSeating]=useState([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1,
-    2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,
-    1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1,
-    2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,
-    1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1,
-    2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,
-    1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1,
-    2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,
-    1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1,
-    2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,
-    1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1,
-    2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,
-    1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13])
+    console.log('rerende')
+    const ree=['booked','notbooked','booked','notbooked',
+    'booked','notbooked','booked','notbooked','booked','notbooked','booked','notbooked',
+    'booked','notbooked',]
+const[seating,setSeating]=useState(ree)
     const handleClose = (value) => {
         console.log('okbro')
         setSeatopen(false)
@@ -25,17 +17,18 @@ const[seating,setSeating]=useState([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
         setSeatopen(false)
     }
     const handleselect=(index)=>{
-var a=seating
+        console.log(seating,'cripple')
+var a=ree
 var b=index+seats
 console.log(index,b,a)
 console.log(index)
 for(let i=index;i<b;i++){
     console.log(a[i])
-    a[i]=false
+    a[i]='booked'
     console.log(a[i])
 }
-setSeating(a)
-console.log(seating)
+setSeating([...a])
+console.log(seating,'everydaybro')
     }
     return(
         <>
@@ -52,8 +45,8 @@ console.log(seating)
        <div className={styles.seatscontainer}>
        <div className={styles.seats}>
     {seating.map((s,index)=>
-       <div className={s===false?styles.filled:styles.seat} onClick={()=>handleselect(index)}>
-           {s&&s}
+       <div className={s==='booked'?styles.filled:styles.seat} onClick={()=>handleselect(index)}>
+           {index}
        </div>
     )}
     
