@@ -464,14 +464,32 @@ margin-top: 4vh;
 }
 .seats{
   display: flex;
-
+flex-wrap: wrap;
 }
 .seat{
   width: 1.5vw;
-  height: 3vh;
-  border: 1px solid green;
-  border-radius: 3px;
-  color: green;
+  height: 3.5vh;
+  border: 1px solid #1EA83C;
+  border-radius: 2px;
+  color: #1EA83C;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1vh 0.5vw;
+  font-size: 12px;
+}
+.filled{
+  width: 1.5vw;
+  height: 3.5vh;
+  border: 1px solid #1EA83C;
+  border-radius: 2px;
+  color: #1EA83C;
+  display:flex;
+  background-color: #1EA83C;
+  justify-content: center;
+  align-items: center;
+  margin: 1vh 0.5vw;
+  font-size: 12px;
 }
 @media (max-width: 600px) {
   .grid {
