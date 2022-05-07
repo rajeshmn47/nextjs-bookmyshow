@@ -21,7 +21,7 @@ export const Selectseats=({seatopen,setSeatopen,state,setState,noofseats,setNoof
         <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={seatopen}>
         <div className={styles.selectseats}>
       <h5>How many Seats</h5>
-      <Pagination count={10} color='#F84464' style={{color:'#F84464'}} onChange={handleChange}   />
+      <Pagination count={10} color='secondary' style={{color:'#F84464'}} onChange={handleChange}   />
       <button onClick={handleclick} className={styles.signinbtncon}>Select Seats</button> 
       </div>
     

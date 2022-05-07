@@ -26,11 +26,16 @@ const[seating,setSeating]=useState([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
     }
     const handleselect=(index)=>{
 var a=seating
-for(i=index;i++;i<index+seats){
+var b=index+seats
+console.log(index,b,a)
+console.log(index)
+for(let i=index;i<b;i++){
+    console.log(a[i])
     a[i]=false
-
+    console.log(a[i])
 }
 setSeating(a)
+console.log(seating)
     }
     return(
         <>
@@ -48,7 +53,7 @@ setSeating(a)
        <div className={styles.seats}>
     {seating.map((s,index)=>
        <div className={s===false?styles.filled:styles.seat} onClick={()=>handleselect(index)}>
-           {s}
+           {s&&s}
        </div>
     )}
     
