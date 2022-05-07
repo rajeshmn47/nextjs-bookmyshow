@@ -22,7 +22,9 @@ export default function Navbar({ children }) {
     </div>
     <div className={styles.seconddiv}>
 <h5>Bengaluru</h5>
-<button className={styles.signin}>Sign in</button>
+<Link href='/login'>
+<button className={styles.signinbtn}>Sign in</button>
+</Link>
 <h5>Menu</h5>
     </div>
   </div>
