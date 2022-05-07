@@ -140,7 +140,7 @@ const Buytickets = ({movie}) => {
         PVR:Gold,Forum Mall,Koramangala
     </h5>
     <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 0vw'}}>
+    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
 <h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
 </div>
@@ -165,7 +165,7 @@ const Buytickets = ({movie}) => {
         PVR:Gold,Forum Mall,Koramangala
     </h5>
     <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 0vw'}}>
+    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
 <h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
 </div>
@@ -190,7 +190,7 @@ const Buytickets = ({movie}) => {
         PVR:Gold,Forum Mall,Koramangala
     </h5>
     <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 0vw'}}>
+    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
 <h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
 </div>
@@ -215,7 +215,7 @@ const Buytickets = ({movie}) => {
         PVR:Gold,Forum Mall,Koramangala
     </h5>
     <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 0vw'}}>
+    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
 <h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
 </div>
@@ -240,7 +240,7 @@ const Buytickets = ({movie}) => {
         PVR:Gold,Forum Mall,Koramangala
     </h5>
     <div style={{display:'flex',alignItems:'center',marginRight:'2vw'}}>
-    <div style={{display:'flex',alignItems:'center',margin:'1vh 0vw'}}>
+    <div style={{display:'flex',alignItems:'center',margin:'1vh 1vw'}}>
 <ConfirmationNumberOutlinedIcon style={{color:'#49BA8E'}}/> 
 <h5 style={{color:'#49BA8E',margin:'0vh 1vw'}}>M-Ticket</h5>
 </div>
