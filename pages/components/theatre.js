@@ -40,8 +40,10 @@ console.log(index,b,a)
 console.log(index)
 for(let i=index;i<b;i++){
     console.log(a[i])
+    if(!(a[i]==='booked')){
     a[i]='stillbooking'
     console.log(a[i])
+    }
 }
 setSeating([...a])
 console.log(seating,'everydaybro')

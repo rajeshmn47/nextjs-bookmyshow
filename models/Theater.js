@@ -14,7 +14,7 @@ const TheaterSchema = new mongoose.Schema({
   },
   movies_playing:  [
     {
-      user: {
+      movie: {
         type: mongoose.Schema.ObjectId,
         ref: "Movie",
         required: true,
@@ -27,16 +27,20 @@ const TheaterSchema = new mongoose.Schema({
         type: Number,
         required: true,
       },
+    
       seats: [
         {
+          name:{
         type: String,
         required: true,
+          }
       }],
     },
   ],
-  coordinates: {
-    type: String,
-  },
+  coordinates:{
+    type:[Number],
+    index:"2dsphere"
+},
   city: {
     type:String,
   },
