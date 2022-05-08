@@ -12,8 +12,27 @@ const TheaterSchema = new mongoose.Schema({
     required: [true, "Please provide the pet owner's name"],
     maxlength: [20, "Owner's Name cannot be more than 60 characters"],
   },
-  movies_playing: [{
-  }
+  movies_playing:  [
+    {
+      user: {
+        type: mongoose.Schema.ObjectId,
+        ref: "Movie",
+        required: true,
+      },
+      name: {
+        type: String,
+        required: true,
+      },
+      price: {
+        type: Number,
+        required: true,
+      },
+      seats: [
+        {
+        type: String,
+        required: true,
+      }],
+    },
   ],
   coordinates: {
     type: String,
