@@ -528,6 +528,38 @@ height: 60vh;
   border-radius: 8px;
   font-size: 16px;
 }
+.shows{
+  background-color: #A5A5A5;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2vh 2vw;
+}
+.showbtn{
+  background-color: #2DC492;
+  outline: none;
+  border: none;
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 1vh 1vw;
+  font-size: 12px;
+  margin: 0vh 1vw;
+  height: 5vh;
+}
+.unshowbtn{
+  background-color: #FFFFFF;
+  outline: none;
+  border: none;
+  height: 5vh;
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 1vh 1vw;
+  font-size: 12px;
+  border: 1px solid #2DC492;
+  margin: 0vh 1vw;
+  color: #2DC492;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;

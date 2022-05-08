@@ -59,6 +59,17 @@ console.log(seating,'everydaybro')
     {seats} tickets</button>
               </div>
        </div>
+    <div className={styles.shows}>
+    <button className={styles.showbtn}>
+        07:00 AM
+        </button>   
+        <button className={styles.unshowbtn}>
+        07:00 AM
+        </button>    
+        <button className={styles.unshowbtn}>
+        07:00 AM
+        </button>     
+    </div>
        <div className={styles.seatscontainer}>
        <div className={styles.seats}>
     {seating.map((s,index)=>
