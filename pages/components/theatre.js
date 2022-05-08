@@ -5,9 +5,9 @@ import {useState} from 'react'
 
 export const Theatre=({seats})=>{
     console.log('rerende')
-    const ree=['booked','notbooked','booked','notbooked',
-    'booked','notbooked','booked','notbooked','booked','notbooked','booked','notbooked',
-    'booked','notbooked',]
+    const ree=['notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',]
 const[seating,setSeating]=useState(ree)
     const handleClose = (value) => {
         console.log('okbro')
@@ -52,7 +52,9 @@ console.log(seating,'everydaybro')
     
        </div>
        </div>
-     
+     <div className={styles.payment}>
+<button className={styles.paymentbtn}>Pay Rs.2450.00</button>
+     </div>
         </>
 
     )
