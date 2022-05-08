@@ -482,6 +482,18 @@ height: 60vh;
 .filled{
   width: 1.5vw;
   height: 3.5vh;
+  border-radius: 2px;
+  display:flex;
+  justify-content: center;
+  background-color: #EEEEEE;
+  color: #FFFFFF;
+  align-items: center;
+  margin: 1vh 0.5vw;
+  font-size: 12px;
+}
+.stillbooking{
+  width: 1.5vw;
+  height: 3.5vh;
   border: 1px solid #1EA83C;
   border-radius: 2px;
   color: #1EA83C;

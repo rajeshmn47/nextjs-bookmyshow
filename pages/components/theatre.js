@@ -5,9 +5,24 @@ import {useState} from 'react'
 
 export const Theatre=({seats})=>{
     console.log('rerende')
-    const ree=['notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
+    const ree=['booked','notbooked','notbooked','booked','notbooked','notbooked','notbooked',
     'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
-    'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',]
+    'notbooked','notbooked','notbooked','booked','booked','notbooked','notbooked','booked',
+    'booked','booked','booked','booked','booked','booked','notbooked',
+    'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','booked','booked','notbooked','notbooked','booked',
+    'booked','notbooked','notbooked','booked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','booked','booked','notbooked','notbooked','booked',
+    'booked','booked','booked','booked','booked','booked','notbooked',
+    'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','booked','booked','notbooked','notbooked','booked',
+    'booked','notbooked','notbooked','booked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','booked','booked','notbooked','notbooked','booked',
+    'booked','booked','booked','booked','booked','booked','notbooked',
+    'notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked','notbooked',
+    'notbooked','notbooked','notbooked','booked','booked','notbooked','notbooked','booked',]
 const[seating,setSeating]=useState(ree)
     const handleClose = (value) => {
         console.log('okbro')
@@ -18,17 +33,19 @@ const[seating,setSeating]=useState(ree)
     }
     const handleselect=(index)=>{
         console.log(seating,'cripple')
+        if(!(seating[index]==='booked')){
 var a=ree
 var b=index+seats
 console.log(index,b,a)
 console.log(index)
 for(let i=index;i<b;i++){
     console.log(a[i])
-    a[i]='booked'
+    a[i]='stillbooking'
     console.log(a[i])
 }
 setSeating([...a])
 console.log(seating,'everydaybro')
+        }
     }
     return(
         <>
@@ -45,7 +62,8 @@ console.log(seating,'everydaybro')
        <div className={styles.seatscontainer}>
        <div className={styles.seats}>
     {seating.map((s,index)=>
-       <div className={s==='booked'?styles.filled:styles.seat} onClick={()=>handleselect(index)}>
+       <div className={s==='booked'?styles.filled:s==='stillbooking'?styles.stillbooking:styles.seat} 
+       onClick={()=>handleselect(index)}>
            {index}
        </div>
     )}
